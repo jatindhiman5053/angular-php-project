@@ -1,0 +1,30 @@
+<div class="formtemp">
+    <div class="data_enter">
+        <form action="" method="post" id="addform" class="user_form_input" #usercommentform="ngForm"
+            (ngSubmit)="Onsubmitcomment(usercommentform.value)">
+            <input type="text" aria-required="true" class="form-control mb-3" id="userName" name="uname"
+                placeholder="First Name*" ngModel>
+
+            <input type="email" aria-required="true" class="form-control mb-3" id="userEmail" name="uemail"
+                placeholder="name@example.com*" ngModel>
+
+            <input type="text" aria-required="true" class="form-control mb-3" id="userWebsite" name="uwebsite"
+                placeholder="Website*" ngModel>
+
+            <select class="form-select mb-3 gender" aria-required="true" aria-label="Default select example"
+                id="userGender" name="ugender" ngModel>
+                <option value="Not Selected">Select Gender*</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <textarea class="form-control mb-3" aria-required="true" placeholder="Leave a comment here*"
+                id="userComment" name="ucomment" style="height: 100px" ngModel></textarea>
+
+            <button type="submit" class="btn btn-primary" id="save_btn">Submit</button>
+        </form>
+    </div>
+</div>
+
+<router-outlet></router-outlet>

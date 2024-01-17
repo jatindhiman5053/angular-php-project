@@ -1,0 +1,19 @@
+.about {
+    overflow: hidden;
+    position: relative;
+    color: white;
+}
+
+.about-img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+}
+
+.about-content {
+    position: relative;
+    /* color: white; */
+}

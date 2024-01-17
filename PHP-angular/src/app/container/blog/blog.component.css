@@ -1,0 +1,29 @@
+button {
+    color: black;
+}
+
+.edit_form_input {
+    width: 100%;
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.edit_form_input>div {
+    width: calc(90% / 2);
+}
+
+.edit-gender {
+    width: 100%;
+    padding: 1rem 0.75rem;
+}
+
+.modal-footer {
+    gap: 10px;
+}
+
+.modal-footer>button {
+    padding: 5px;
+}

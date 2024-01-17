@@ -1,0 +1,19 @@
+<nav>
+    <div class="logo">
+        <button routerLink="/">MY-LOGO</button>
+    </div>
+
+    <div class="menu">
+        <button routerLink="/home">HOME</button>
+        <button routerLink="/about">ABOUT</button>
+        <button routerLink="/blogs">BLOGS</button>
+        <button routerLink="/contact">CONTACT</button>
+    </div>
+
+    <div class="login-serarch">
+        <input type="text" name="search" class="form-control" id="search-record" placeholder="Search">
+        <button routerLink="/login" class="login-btn btn btn-primary">Login</button>
+    </div>
+</nav>
+<router-outlet></router-outlet>
+<div class="loader" *ngIf="displayloader"></div>

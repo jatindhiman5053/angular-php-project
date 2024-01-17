@@ -1,0 +1,28 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.user_form_input {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 50px;
+    padding-block: 20px;
+}
+
+.user_form_input>input {
+    width: 45%;
+}
+
+.user_form_input .form-control {
+    padding: 0.75rem;
+}
+
+.gender {
+    padding: 0.75rem;
+    width: 45%;
+}

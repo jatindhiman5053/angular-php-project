@@ -1,0 +1,65 @@
+<div class="login-main d-flex justify-content-center">
+    <div class="main">
+        <div class="login-heading text-center">
+            <h2>Login</h2>
+        </div>
+        <div class="login-form">
+            <form method="POST" (ngSubmit)="Onlogin(loginform.value);" #loginform="ngForm">
+                <div class="username mt-5">
+                    <small>Username</small>
+                    <div class="border-bottom">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" name="username" id="login_username" placeholder="Type your username"
+                            autocomplete="off" ngModel>
+                    </div>
+                </div>
+
+                <div class="password mt-3">
+                    <small>Password</small>
+                    <div class="border-bottom">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" name="password" id="login_password" placeholder="Type your password"
+                            ngModel>
+                    </div>
+                </div>
+
+                <div class="forgot pb-4">
+                    <a href="">Forgot password?</a>
+                </div>
+
+                <div class="login-btn">
+                    <button type="submit">Login</button>
+                    <div class="card flex justify-content-center">
+                        <p-dialog [(visible)]="visible" [style]="{width: '20vw'}">
+                            <div class="text-center">
+                                <p>No user found</p>
+                                <button type="submit" (click)=" closeDialog()">Close</button>
+                            </div>
+                        </p-dialog>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="signup pt-5 pb-3">
+            <p>Or Sign Up Using</p>
+        </div>
+
+        <div class="social-icons">
+            <a href="#" class="login-social-item bg1">
+                <i class="fa-brands fa-facebook-f" style="color: #ffffff;"></i>
+            </a>
+            <a href="#" class="login-social-item bg2">
+                <i class="fa-brands fa-twitter" style="color: #ffffff;"></i>
+            </a>
+            <a href="#" class="login-social-item bg3">
+                <i class="fa-brands fa-google" style="color: #ffffff;"></i>
+            </a>
+        </div>
+
+        <div class="">
+            
+        </div>
+    </div>
+</div>
+<router-outlet></router-outlet>
