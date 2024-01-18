@@ -12,6 +12,7 @@ import { ContactComponent } from './container/contact/contact.component';
 import { PageNotFoundComponent } from './container/page-not-found/page-not-found.component';
 import { DefaultComponent } from './container/default/default.component';
 import { LoginComponent } from './container/header/login/login.component';
+import { RegisteruserComponent } from './container/header/login/registeruser/registeruser.component';
 
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -29,6 +30,7 @@ import { all_fetchService } from './services/fetch_all.service';
 import { single_fetch_Service } from './services/fetch_single.service';
 import { searchService } from './services/search.service';
 import { authService } from './services/auth.service';
+import { userService } from './services/user.service';
 
 
 
@@ -45,6 +47,7 @@ import { authService } from './services/auth.service';
     PageNotFoundComponent,
     DefaultComponent,
     LoginComponent,
+    RegisteruserComponent,
 
   ],
   imports: [
@@ -66,7 +69,8 @@ import { authService } from './services/auth.service';
     all_fetchService,
     single_fetch_Service,
     searchService,
-    authService
+    authService,
+    userService
   ],
   bootstrap: [AppComponent]
 })

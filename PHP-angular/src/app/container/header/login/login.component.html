@@ -33,11 +33,12 @@
                         <p-dialog [(visible)]="visible" [style]="{width: '20vw'}">
                             <div class="text-center">
                                 <p>No user found</p>
-                                <button type="submit" (click)=" closeDialog()">Close</button>
+                                <!-- <button type="submit" (click)=" closeDialog()">Close</button> -->
                             </div>
                         </p-dialog>
                     </div>
                 </div>
+
             </form>
         </div>
 
@@ -57,8 +58,8 @@
             </a>
         </div>
 
-        <div class="">
-            
+        <div class="register text-center mt-3">
+            <button class="register-btn" (click)="registersignup()">Register Here</button>
         </div>
     </div>
 </div>

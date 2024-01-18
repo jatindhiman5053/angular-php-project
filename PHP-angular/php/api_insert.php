@@ -18,7 +18,6 @@ include("config.php");
 
 $sql = "INSERT INTO emp_feedback(fname, email, website, comment, gender, DOC) VALUES ('{$name}', '{$email}', '{$website}', '{$comment}', '{$gender}', current_timestamp());";
 
-// $result = mysqli_query($conn, $sql) or die("SQL Query Failed");
 
 if (mysqli_query($conn, $sql)) {
     echo json_encode(array("msg" => "Employee Added a Comment", "status" => true));

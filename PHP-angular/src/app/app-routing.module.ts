@@ -7,6 +7,7 @@ import { AboutComponent } from './container/about/about.component';
 import { PageNotFoundComponent } from './container/page-not-found/page-not-found.component';
 import { DefaultComponent } from './container/default/default.component';
 import { LoginComponent } from './container/header/login/login.component';
+import { RegisteruserComponent } from './container/header/login/registeruser/registeruser.component';
 
 const routes: Routes = [
   { path: '', component: DefaultComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: "blogs", component: BlogComponent },
   { path: "contact", component: ContactComponent },
   { path: "login", component: LoginComponent },
+  { path: "login/register", component: RegisteruserComponent },
   { path: "**", component: PageNotFoundComponent },
 ];
 

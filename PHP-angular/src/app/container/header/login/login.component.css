@@ -91,7 +91,12 @@ small {
     border: none;
 }
 
-.w-full{
+.w-full {
     border: 1px solid white;
     color: white;
+}
+
+.register-btn {
+    color: #246EFD;
+    text-decoration: underline;
 }

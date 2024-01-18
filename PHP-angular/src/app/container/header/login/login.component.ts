@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { authService } from '../../../services/auth.service';
+import { userService } from '../../../services/user.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -24,17 +25,36 @@ export class LoginComponent {
   }
 
   Onlogin(login: { username: string, password: string }) {
-    this.authService.admin_login(login).subscribe((res: any) => {
-      if (res?.status == true) {
-        this.adminlogin();
-      } else {
-        this.showDialog();
-      }
-    })
+    if (login.username == "admin" && login.password == "admin") {
+      this.authService.admin_login(login).subscribe((res: any) => {
+        if (res?.status == true) {
+          this.adminlogin();
+        } else {
+          this.showDialog();
+        }
+      })
+    } else {
+      this.authService.admin_login(login).subscribe((res: any) => {
+        if (res?.status == true) {
+          this.userlogin();
+        } else {
+          this.showDialog();
+        }
+      })
+    }
   }
+
 
   adminlogin() {
     this.router.navigate(['home'])
+  }
+
+  userlogin() {
+    this.router.navigate([''])
+  }
+
+  registersignup() {
+    this.router.navigate(['login/register'])
   }
 
 }

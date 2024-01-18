@@ -5,12 +5,18 @@ header('Access-Control-Allow-Origin:*');
 header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
 Header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept');
 
-include("authconfig.php");
-
+include("config.php");
 $username = $_REQUEST["username"];
 $password = $_REQUEST["password"];
 
-$sql = "SELECT * FROM auth WHERE username= '{$username}' AND password= '{$password}'";
+
+if ($username == "admin" && $password == "admin") {
+    $sql = "SELECT * FROM auth WHERE username= '{$username}' AND password= '{$password}'";
+} else {
+    $encptpass = md5($password);
+    $sql = "SELECT * FROM employee WHERE name= '{$username}' AND passwords= '{$encptpass}'";
+}
+
 
 $result = mysqli_query($conn, $sql);
 

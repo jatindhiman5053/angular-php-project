@@ -1,0 +1,40 @@
+<div class="login-main d-flex justify-content-center">
+    <div class="main">
+        <div class="login-heading text-center">
+            <h2>Register</h2>
+        </div>
+        <div class="login-form">
+            <form action="" method="post" id="addform" class="user_form_input" #userregisterform="ngForm"
+                (ngSubmit)="OnregisterUser(userregisterform.value)">
+                
+                <label for="userName">Name: </label>
+                <input type="text" aria-required="true" class="form-control mb-3" id="username" name="username"
+                    placeholder="First Name*" ngModel>
+
+                <label for="userEmail">Email: </label>
+                <input type="email" aria-required="true" class="form-control mb-3" id="useremail" name="useremail"
+                    placeholder="name@example.com*" ngModel>
+
+                <label for="userage">Age: </label>
+                <input type="number" aria-required="true" class="form-control mb-3" id="userage" name="userage" ngModel>
+
+                <label for="userGender">Gender: </label>
+                <div class="selectgender">
+                    <select class="form-select mb-3 gender" aria-required="true" aria-label="Default select example"
+                        id="usergender" name="usergender" ngModel>
+                        <option value="Not Selected">Select Gender*</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <label for="userpassword">Password: </label>
+                <input type="text" aria-required="true" class="form-control mb-3" id="userpassword" name="userpassword"
+                    placeholder="password*" ngModel>
+
+                <button type="submit" class="btn btn-primary" id="save_btn">Register</button>
+            </form>
+        </div>
+    </div>
+</div>
