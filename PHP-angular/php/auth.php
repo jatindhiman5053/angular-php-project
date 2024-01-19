@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 header('Content-type: application/json');
 header('Access-Control-Allow-Origin:*');
 header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
@@ -17,6 +19,11 @@ if ($username == "admin" && $password == "admin") {
     $sql = "SELECT * FROM employee WHERE name= '{$username}' AND passwords= '{$encptpass}'";
 }
 
+if ($username == "admin" && $password == "admin") {
+    $_SESSION["admin"] = $username;
+} else {
+    $_SESSION["user"] = $username;
+}
 
 $result = mysqli_query($conn, $sql);
 
@@ -26,8 +33,13 @@ if (!$result) {
 }
 
 if (mysqli_num_rows($result) > 0) {
-    $output = mysqli_fetch_all($result, MYSQLI_ASSOC);
-    echo json_encode(array("msg" => "Record Found", "status" => true));
+    if ($username == "admin" && $password == "admin") {
+        $output = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        echo json_encode(array("msg" => "Record Found {$username}", "status" => true));
+    } else {
+        $output = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        echo json_encode(array("msg" => "Record Found {$username}", "status" => true));
+    }
 } else {
     echo json_encode(array("msg" => "No Record Found", "status" => false));
 }

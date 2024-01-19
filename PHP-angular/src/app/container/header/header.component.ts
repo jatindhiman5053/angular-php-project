@@ -33,7 +33,4 @@ export class HeaderComponent implements OnInit {
   closeDialog() {
     this.visible = false;
   }
-
-
-
 }

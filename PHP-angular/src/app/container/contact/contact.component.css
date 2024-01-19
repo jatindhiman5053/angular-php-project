@@ -10,7 +10,7 @@ input::-webkit-inner-spin-button {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    padding-inline: 50px;
+    padding-inline: 15%;
     padding-block: 20px;
 }
 
@@ -25,4 +25,14 @@ input::-webkit-inner-spin-button {
 .gender {
     padding: 0.75rem;
     width: 45%;
+}
+
+.submit-btn {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.submit-btn button {
+    padding-inline: 30px;
 }

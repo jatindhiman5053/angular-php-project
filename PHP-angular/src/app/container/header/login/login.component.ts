@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
 import { authService } from '../../../services/auth.service';
-import { userService } from '../../../services/user.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -13,6 +12,7 @@ export class LoginComponent {
 
   constructor(private authService: authService, private router: Router) {
   }
+  
 
   visible: boolean = false;
 

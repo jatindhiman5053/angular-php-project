@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { all_fetchService } from '../../services/fetch_all.service';
 import { deleteService } from '../../services/delete.service';
 import { HttpClient } from '@angular/common/http';
+import { FormControl, FormGroup } from '@angular/forms';
 
 
 @Component({
@@ -30,9 +31,9 @@ export class HomeComponent implements OnInit {
     this.deleteService.delete_record(uid);
   }
 
-  feth_single_data() {
+  fetch_single_user(uid: number) {
+    console.log(uid);
 
   }
-
 
 }

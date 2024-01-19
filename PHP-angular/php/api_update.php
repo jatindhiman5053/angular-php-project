@@ -19,8 +19,6 @@ include("config.php");
 
 $sql = "UPDATE `emp` SET fname='{$name}', email='{$email}', website='{$website}',comment='{$comment}', gender='{$gender}', DOC='current_timestamp()' WHERE emp_id= '{$id}'";
 
-// $result = mysqli_query($conn, $sql) or die("SQL Query Failed");
-
 if (mysqli_query($conn, $sql)) {
     echo json_encode(array("msg" => "Employee Updated a Comment", "status" => true));
 } else {

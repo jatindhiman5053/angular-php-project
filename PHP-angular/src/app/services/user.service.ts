@@ -7,11 +7,11 @@ import { HttpClient } from "@angular/common/http";
 })
 export class userService {
 
-    // url: any = 'http://localhost/angular-php-Project/PHP-angular/php/user.php';
+    url: any = 'http://localhost/angular-php-Project/PHP-angular/php/user.php';
     constructor(private http: HttpClient) { }
 
     RegisterUser(register: { username: string, userage: number, useremail: string, usergender: string, userpassword: string }) {
-        this.http.post('http://localhost/angular-php-Project/PHP-angular/php/user.php', register).subscribe((res) => {
+        this.http.post(this.url, register).subscribe((res) => {
             console.log(res);
         });
     }

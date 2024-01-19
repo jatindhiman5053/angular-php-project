@@ -18,14 +18,15 @@
                     <ng-container class="card" *ngFor="let user of users,let Sno = index">
                         <tr>
                             <th scope="row"> {{Sno + 1}} </th>
-                            <td>{{user.fname}} </td>
+                            <td>{{user.fname}}</td>
                             <td>{{user.email}}</td>
                             <td>{{user.website}}</td>
                             <td>{{user.gender}}</td>
                             <td>{{user.comment}}</td>
 
                             <td>
-                                <button (click)="showDialog(); feth_single_data()" class="btn btn-success">Edit</button>
+                                <button (click)="showDialog(); fetch_single_user(user.emp_id)"
+                                    class="btn btn-success">Edit</button>
                                 <p-dialog header="Header" [(visible)]="visible" [modal]="true"
                                     [style]="{ width: '50rem' }" [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }">
 
@@ -35,9 +36,11 @@
                                         </div>
                                     </ng-template>
 
-                                    <form action="" method="post" id="edit_emp_Comment">
+                                    <form action="" method="post" id="edit_emp_Comment" >
                                         <div class="edit_form_input">
+
                                             <input type="text" class="form-control" id="editId" name="uid" hidden="">
+
                                             <div class="form-floating mb-3">
                                                 <input type="text" class="form-control" id="editName"
                                                     placeholder="First Name" name="uname">
@@ -79,12 +82,14 @@
                                             class="btn btn-secondary mx-2">Close</button>
 
                                         <button (click)="visible = false" pAutoFocus [autofocus]="true"
-                                            class="btn btn-success">Save Change</button>
+                                            class="btn btn-success" type="submit
+                                            ">Save Change</button>
 
                                     </ng-template>
 
                                 </p-dialog>
                             </td>
+
                             <td>
                                 <Button class="btn btn-danger delete-btn"
                                     (click)="deleteRecord(user.emp_id)">Delete</Button>
