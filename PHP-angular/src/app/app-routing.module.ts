@@ -6,8 +6,8 @@ import { BlogComponent } from './container/blog/blog.component';
 import { AboutComponent } from './container/about/about.component';
 import { PageNotFoundComponent } from './container/page-not-found/page-not-found.component';
 import { DefaultComponent } from './container/default/default.component';
-import { LoginComponent } from './container/header/login/login.component';
-import { RegisteruserComponent } from './container/header/login/registeruser/registeruser.component';
+import { LoginComponent } from './container/login/login.component';
+import { RegisteruserComponent } from './container/registeruser/registeruser.component';
 
 const routes: Routes = [
   { path: '', component: DefaultComponent },

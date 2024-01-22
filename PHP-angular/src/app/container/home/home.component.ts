@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { all_fetchService } from '../../services/fetch_all.service';
 import { deleteService } from '../../services/delete.service';
 import { HttpClient } from '@angular/common/http';
-import { FormControl, FormGroup } from '@angular/forms';
+import { updateService } from '../../services/update.service';
 
 
 @Component({
@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
 
   users: any;
 
-  constructor(private all_fetchService: all_fetchService, private deleteService: deleteService, private http: HttpClient) { }
+  constructor(private all_fetchService: all_fetchService, private deleteService: deleteService, private http: HttpClient, private updateService: updateService) { }
 
   ngOnInit(): void {
     this.all_fetchService.fetch_all().subscribe((data) => {
@@ -32,8 +32,12 @@ export class HomeComponent implements OnInit {
   }
 
   fetch_single_user(uid: number) {
-    console.log(uid);
+    // console.log(uid);
+    this.updateService.update_record(uid);
+  }
 
+  updateuser(edit: { id: number }) {
+    console.log(edit.id);
   }
 
 }

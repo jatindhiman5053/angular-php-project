@@ -36,10 +36,12 @@
                                         </div>
                                     </ng-template>
 
-                                    <form action="" method="post" id="edit_emp_Comment" >
+                                    <form action="" method="post" id="edit_emp_Comment" #editform="ngForm"
+                                        (ngSubmit)="updateuser(editform.value)">
                                         <div class="edit_form_input">
 
-                                            <input type="text" class="form-control" id="editId" name="uid" hidden="">
+                                            <input type="text" class="form-control" id="editId" name="uid" hidden=""
+                                                value="{{user.emp_id}}" ngModel>
 
                                             <div class="form-floating mb-3">
                                                 <input type="text" class="form-control" id="editName"

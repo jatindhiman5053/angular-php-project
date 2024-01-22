@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit } from '@angular/core';
 
-import { authService } from '../../../services/auth.service';
+import { authService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,7 +12,7 @@ export class LoginComponent {
 
   constructor(private authService: authService, private router: Router) {
   }
-  
+
 
   visible: boolean = false;
 
@@ -23,6 +23,8 @@ export class LoginComponent {
   closeDialog() {
     this.visible = false;
   }
+
+  onadminlogin: EventEmitter<string> = new EventEmitter<string>()
 
   Onlogin(login: { username: string, password: string }) {
     if (login.username == "admin" && login.password == "admin") {
