@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
 
 import { authService } from '../../services/auth.service';
 import { Router } from '@angular/router';
@@ -8,11 +8,14 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
+
+@Injectable({
+  providedIn: "root"
+})
 export class LoginComponent {
 
   constructor(private authService: authService, private router: Router) {
   }
-
 
   visible: boolean = false;
 
@@ -24,35 +27,33 @@ export class LoginComponent {
     this.visible = false;
   }
 
-  onadminlogin: EventEmitter<string> = new EventEmitter<string>()
-
   Onlogin(login: { username: string, password: string }) {
     if (login.username == "admin" && login.password == "admin") {
-      this.authService.admin_login(login).subscribe((res: any) => {
-        if (res?.status == true) {
-          this.adminlogin();
-        } else {
-          this.showDialog();
+      this.authService.admin_login(login).subscribe({
+        next: (res: any) => {
+          var user = res;
+          var role = user[0].role;
+          localStorage.setItem("Role", role);
+          this.authService.isloggedinuser.next(true);
+          this.router.navigate(['home'])
+        },
+        error: (err) => {
+          console.log(err);
         }
       })
     } else {
-      this.authService.admin_login(login).subscribe((res: any) => {
-        if (res?.status == true) {
-          this.userlogin();
-        } else {
-          this.showDialog();
+      this.authService.admin_login(login).subscribe({
+        next: (res: any) => {
+          var user = res;
+          var role = user[0].role;
+          localStorage.setItem("Role", role);
+          this.router.navigate([''])
+        },
+        error: (err) => {
+          console.log(err);
         }
       })
     }
-  }
-
-
-  adminlogin() {
-    this.router.navigate(['home'])
-  }
-
-  userlogin() {
-    this.router.navigate([''])
   }
 
   registersignup() {
@@ -60,3 +61,4 @@ export class LoginComponent {
   }
 
 }
+

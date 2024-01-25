@@ -31,13 +31,13 @@ export class HomeComponent implements OnInit {
     this.deleteService.delete_record(uid);
   }
 
-  fetch_single_user(uid: number) {
-    // console.log(uid);
-    this.updateService.update_record(uid);
-  }
+  // fetch_single_user(uid: number) {
+  //   // console.log(uid);
+  //   this.updateService.update_record(uid);
+  // }
 
-  updateuser(edit: { id: number }) {
-    console.log(edit.id);
+  updateuser(edit: { id: number, editname: string, editemail: string, editwebsite: string, editgender: string, editcomment: string }) {
+    console.log(edit);
   }
 
 }

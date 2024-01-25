@@ -1,37 +1,27 @@
-import { Component, OnInit } from '@angular/core';
-import { Event, NavigationCancel, NavigationEnd, NavigationStart, Router } from '@angular/router';
+import { Component, OnInit, inject } from '@angular/core';
+import { authService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  authService = inject(authService);
 
-  isAdmin: boolean = true;
-  displayloader = false;
+  isloggedIn: boolean = false;
 
   ngOnInit(): void {
-    this.router.events.subscribe((routerEvnet: Event) => {
-      if (routerEvnet instanceof NavigationStart) {
-        this.displayloader = true;
-      }
-
-      if (routerEvnet instanceof NavigationEnd || routerEvnet instanceof NavigationCancel) {
-        this.displayloader = false;
-      }
+    this.authService.isloggedinuser.subscribe(res => {
+      this.isloggedIn = this.authService.isloggedIn();
     })
   }
 
-  visible: boolean = false;
+  logout() {
+    localStorage.removeItem("Role");
+    this.authService.isloggedinuser.next(false);
 
-  showDialog() {
-    this.visible = true;
-  }
-
-  closeDialog() {
-    this.visible = false;
   }
 }
+

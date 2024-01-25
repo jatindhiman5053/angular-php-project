@@ -25,8 +25,7 @@
                             <td>{{user.comment}}</td>
 
                             <td>
-                                <button (click)="showDialog(); fetch_single_user(user.emp_id)"
-                                    class="btn btn-success">Edit</button>
+                                <button (click)="showDialog();" class="btn btn-success">Edit</button>
                                 <p-dialog header="Header" [(visible)]="visible" [modal]="true"
                                     [style]="{ width: '50rem' }" [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }">
 
@@ -36,34 +35,34 @@
                                         </div>
                                     </ng-template>
 
-                                    <form action="" method="post" id="edit_emp_Comment" #editform="ngForm"
-                                        (ngSubmit)="updateuser(editform.value)">
+                                    <form action="" method="post" id="edit_emp_Comment" #editform="ngForm">
                                         <div class="edit_form_input">
 
-                                            <input type="text" class="form-control" id="editId" name="uid" hidden=""
+                                            <input type="text" class="form-control" id="editid" name="editid" hidden=""
                                                 value="{{user.emp_id}}" ngModel>
 
                                             <div class="form-floating mb-3">
-                                                <input type="text" class="form-control" id="editName"
-                                                    placeholder="First Name" name="uname">
+                                                <input type="text" class="form-control" id="editname"
+                                                    placeholder="First Name" name="editname" ngModel>
                                                 <label for="editName">First Name</label>
                                             </div>
 
                                             <div class="form-floating mb-3">
-                                                <input type="email" class="form-control" id="editEmail"
-                                                    placeholder="name@example.com" name="uemail">
+                                                <input type="email" class="form-control" id="editemail"
+                                                    placeholder="name@example.com" name="editemail" ngModel>
                                                 <label for="editEmail">Email address</label>
                                             </div>
 
                                             <div class="form-floating mb-3">
-                                                <input type="text" class="form-control" id="editWebsite"
-                                                    placeholder="Website" name="uwebsite">
+                                                <input type="text" class="form-control" id="editwebsite"
+                                                    placeholder="Website" name="editwebsite" ngModel>
                                                 <label for="editWebsite">Website</label>
                                             </div>
 
                                             <div>
                                                 <select class="form-select mb-3 edit-gender"
-                                                    aria-label="Default select example" id="editGender" name="ugender">
+                                                    aria-label="Default select example" id="editgender"
+                                                    name="editgender" ngModel>
                                                     <option value="Male">Male</option>
                                                     <option value="Female">Female</option>
                                                     <option value="Other">Other</option>
@@ -73,21 +72,17 @@
 
                                         <div class="form-floating mb-3">
                                             <textarea class="form-control" placeholder="Leave a comment here"
-                                                id="editComment" style="height: 100px" name="ucomment"></textarea>
+                                                id="editcomment" style="height: 100px" name="editcomment"
+                                                ngModel></textarea>
                                             <label for="editComment">Comments</label>
                                         </div>
-                                    </form>
-
-                                    <ng-template pTemplate="footer">
 
                                         <button (click)="visible = false" pAutoFocus [autofocus]="true"
                                             class="btn btn-secondary mx-2">Close</button>
 
-                                        <button (click)="visible = false" pAutoFocus [autofocus]="true"
-                                            class="btn btn-success" type="submit
-                                            ">Save Change</button>
-
-                                    </ng-template>
+                                        <button pAutoFocus [autofocus]="true" class="btn btn-success" type="submit
+                                            " (click)="updateuser(editform.value)">Save Change</button>
+                                    </form>
 
                                 </p-dialog>
                             </td>

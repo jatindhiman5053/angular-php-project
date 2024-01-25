@@ -12,8 +12,13 @@
 
     <div class="login-serarch">
         <input type="text" name="search" class="form-control" id="search-record" placeholder="Search">
-        <button routerLink="/login" class="login-btn btn btn-primary">Login</button>
+        <ng-container *ngIf="!isloggedIn">
+            <button routerLink="/login" class="login-btn btn btn-primary">Login</button>
+        </ng-container>
+        <ng-container *ngIf="isloggedIn">
+            <button routerLink="/login" class="logout-btn btn btn-primary" (click)="logout()">Logout</button>
+        </ng-container>
     </div>
 </nav>
+
 <router-outlet></router-outlet>
-<div class="loader" *ngIf="displayloader"></div>

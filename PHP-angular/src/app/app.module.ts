@@ -13,6 +13,8 @@ import { PageNotFoundComponent } from './container/page-not-found/page-not-found
 import { DefaultComponent } from './container/default/default.component';
 import { LoginComponent } from './container/login/login.component';
 import { RegisteruserComponent } from './container/registeruser/registeruser.component';
+import { ForgotpasswordComponent } from './container/forgotpassword/forgotpassword.component';
+import { ChangepasswordComponent } from './container/changepassword/changepassword.component';
 
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -31,6 +33,8 @@ import { single_fetch_Service } from './services/fetch_single.service';
 import { searchService } from './services/search.service';
 import { authService } from './services/auth.service';
 import { userService } from './services/user.service';
+import { forgot_password } from './services/forgot_password.service';
+import { ChangePassword } from "./services/change_password.service"
 
 
 
@@ -48,6 +52,8 @@ import { userService } from './services/user.service';
     DefaultComponent,
     LoginComponent,
     RegisteruserComponent,
+    ForgotpasswordComponent,
+    ChangepasswordComponent,
 
   ],
   imports: [
@@ -59,7 +65,8 @@ import { userService } from './services/user.service';
     FormsModule,
     BrowserAnimationsModule,
     DialogModule,
-    ButtonModule
+    ButtonModule,
+
   ],
   providers: [
     provideClientHydration(),
@@ -70,7 +77,10 @@ import { userService } from './services/user.service';
     single_fetch_Service,
     searchService,
     authService,
-    userService
+    userService,
+    forgot_password,
+    ChangePassword,
+
   ],
   bootstrap: [AppComponent]
 })

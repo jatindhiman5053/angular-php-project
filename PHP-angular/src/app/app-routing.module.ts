@@ -8,6 +8,8 @@ import { PageNotFoundComponent } from './container/page-not-found/page-not-found
 import { DefaultComponent } from './container/default/default.component';
 import { LoginComponent } from './container/login/login.component';
 import { RegisteruserComponent } from './container/registeruser/registeruser.component';
+import { ForgotpasswordComponent } from './container/forgotpassword/forgotpassword.component';
+import { ChangepasswordComponent } from './container/changepassword/changepassword.component';
 
 const routes: Routes = [
   { path: '', component: DefaultComponent },
@@ -17,6 +19,8 @@ const routes: Routes = [
   { path: "contact", component: ContactComponent },
   { path: "login", component: LoginComponent },
   { path: "login/register", component: RegisteruserComponent },
+  { path: "login/forgot-password", component: ForgotpasswordComponent },
+  { path: "forgot-password/Change-Password", component: ChangepasswordComponent },
   { path: "**", component: PageNotFoundComponent },
 ];
 
