@@ -32,8 +32,8 @@ export class LoginComponent {
       this.authService.admin_login(login).subscribe({
         next: (res: any) => {
           var user = res;
-          var role = user[0].role;
-          localStorage.setItem("Role", role);
+          var Role = user[0].role;
+          localStorage.setItem("Role", Role);
           this.authService.isloggedinuser.next(true);
           this.router.navigate(['home'])
         },
@@ -45,8 +45,8 @@ export class LoginComponent {
       this.authService.admin_login(login).subscribe({
         next: (res: any) => {
           var user = res;
-          var role = user[0].role;
-          localStorage.setItem("Role", role);
+          var Role = user[0].role;
+          localStorage.setItem("Role", Role);
           this.router.navigate([''])
         },
         error: (err) => {

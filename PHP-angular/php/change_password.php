@@ -4,12 +4,21 @@ include("config.php");
 
 header('Content-type: application/json');
 header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Methods: GET');
-Header('Access-Control-Allow-Headers: Origin, Access-Control-Allow-Methods, Content-Type, Access-Control-Allow-Headers,X-Requested-With, Authorization');
+header('Access-Control-Allow-Methods: POST, GET, OPTIONS, PUT');
+Header('Access-Control-Allow-Headers: Origin, Access-Control-Allow-Methods, Content-Type, Access-Control-Allow-Headers, X-Requested-With, Authorization');
 
-$email = $_REQUEST["email"];
-$password = $_REQUEST["newpassword"];
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    header('Access-Control-Allow-Origin: *');
+    header('Access-Control-Allow-Methods: POST, GET, OPTIONS, PUT');
+    header('Access-Control-Allow-Headers: Origin, Content-Type, Access-Control-Allow-Headers, X-Requested-With, Authorization');
+    exit;
+}
 
+$email = $_GET["email"];
+$password = $_GET["newpassword"];
+
+echo $email;
+echo $password;
 
 $newpassword = md5($password);
 
