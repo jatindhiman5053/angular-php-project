@@ -1,0 +1,31 @@
+.edit_form_input {
+    width: 100%;
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.edit_form_input>div {
+    width: calc(90% / 2);
+}
+
+.edit-gender {
+    width: 100%;
+    padding: 1rem 0.75rem;
+}
+
+.modal-footer>button {
+    display: flex;
+    padding: 5px;
+}
+
+button.btn.btn-secondary.mx.ng-star-inserted {
+    margin-inline: 10px;
+}
+
+/* .edit-btn {
+    padding: 0!important;
+    background-color: orange;
+} */

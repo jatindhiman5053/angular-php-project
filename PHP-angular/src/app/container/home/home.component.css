@@ -1,31 +1,163 @@
-.edit_form_input {
-    width: 100%;
+:root {
+    --white: #F7F1E1;
+    --cream: #F6E6CB;
+    --dcream: #EACEA3;
+    --beige: #CDAD93;
+    --terracotta: #B9816D;
+    --dterracotta: #885444;
+    --peach: #E5AE8A;
+    --orange: #BF835A;
+    --green: #4B5243;
+    --dgreen: #2C3834;
+}
+
+.all_cards {
     display: flex;
-    gap: 5px;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
+}
+
+.minip {
+    width: 300px;
+    height: 450px;
+    margin: auto;
+    background: var(--white);
+    position: relative;
+    box-shadow: 0px 0px 5px var(--terracotta);
+}
+
+.minip .mg {
+    width: 100%;
+    height: 200px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: grid;
+    grid-template-columns: 250px 50px;
+    grid-template-rows: 100px 150px;
+    grid-template-areas:
+        'clr group'
+        'clr .....';
+    transition:
+        grid-template-columns .6s linear,
+        grid-template-rows .6s linear;
+}
+
+.minip:hover .mg {
+    grid-template-columns: 150px 150px;
+    grid-template-rows: 50px 300px;
+    transition:
+        grid-template-columns .6s linear,
+        grid-template-rows .6s linear;
+}
+
+.minip .mg .clr {
+    grid-area: clr;
+    background: var(--green);
+}
+
+.minip .mg .group {
+    font: 10px/10px var(--mono);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    writing-mode: vertical-lr;
+    display: flex;
     align-items: center;
+    justify-content: center;
 }
 
-.edit_form_input>div {
-    width: calc(90% / 2);
+.minip .mg .group span {
+    display: block;
+    transform: rotate(180deg);
+    transition:
+        transform .6s linear;
 }
 
-.edit-gender {
-    width: 100%;
-    padding: 1rem 0.75rem;
+.minip:hover .mg .group span {
+    transform: rotate(270deg);
+    transition:
+        transform .6s linear;
 }
 
-.modal-footer>button {
+.minip .av {
+    width: 200px;
+    height: 350px;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    background: var(--green);
+    background-position: top center;
+    background-size: cover;
+    transition:
+        width .6s linear,
+        height .6s linear;
+}
+
+.minip:hover .av {
+    width: 250px;
+    height: 400px;
+    transition:
+        width .6s linear,
+        height .6s linear;
+}
+
+.minip .info {
+    width: 160px;
+    max-height: 100px;
+    padding: 25px;
+    position: absolute;
+    bottom: 100px;
+    left: 0px;
+    background: var(--peach);
     display: flex;
-    padding: 5px;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-content: flex-start;
+    transition:
+        bottom .6s linear;
 }
 
-button.btn.btn-secondary.mx.ng-star-inserted {
-    margin-inline: 10px;
+.minip:hover .info {
+    bottom: 0px;
+    transition:
+        bottom .6s linear;
 }
 
-/* .edit-btn {
-    padding: 0!important;
-    background-color: orange;
-} */
+.minip .info h1 {
+    display: block;
+    font: 200 25px/30px var(--display);
+    text-indent: -25px;
+    letter-spacing: 1px;
+    margin: 0px 0px 10px 25px;
+}
+
+.minip .info p {
+    font: 10px/15px var(--mono);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.minip a.plot {
+    width: 110px;
+    height: 30px;
+    position: absolute;
+    bottom: 85px;
+    left: 85px;
+    background: var(--dgreen);
+    font: 10px/10px var(--mono);
+    text-transform: uppercase;
+    color: var(--white);
+    text-decoration: none;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition:
+        bottom .6s linear, left .6s linear;
+}
+
+.minip:hover a.plot {
+    bottom: 0px;
+    left: 135px;
+    transition:
+        bottom .6s linear, left .6s linear;
+}

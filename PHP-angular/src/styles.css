@@ -11,5 +11,29 @@ button {
 img {
     width: 100%;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: "Roboto", "Helvetica Neue", sans-serif; }
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    /*COLORS*/
+    --white: #F7F1E1;
+    --cream: #F6E6CB;
+    --dcream: #EACEA3;
+    --beige: #CDAD93;
+    --terracotta: #B9816D;
+    --dterracotta: #885444;
+    --peach: #E5AE8A;
+    --orange: #BF835A;
+    --green: #4B5243;
+    --dgreen: #2C3834;
+
+    /*FONTS*/
+    --mono: 'source-code-pro';
+    --display: 'lust-sans';
+}

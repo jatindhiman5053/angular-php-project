@@ -16,10 +16,12 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.authService.isloggedinuser.subscribe(res => {
       this.isloggedIn = this.authService.isloggedIn();
-    })
+      
+    });
+
     this.authService.isisAdminuser.subscribe(res => {
       this.isAdmin = this.authService.isAdmin();
-    })
+    });
   }
 
   logout() {

@@ -7,7 +7,9 @@ Header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Ac
 
 include("config.php");
 
-$sql = "SELECT * FROM emp_feedback";
+$sql = "SELECT employee.email, employee.name, emp_feedback.comment, emp_feedback.DOC, employee.gender, employee.DOJ FROM employee INNER JOIN emp_feedback ON employee.emp_id=emp_feedback.emp_id;";
+
+
 
 $result = mysqli_query($conn, $sql);
 

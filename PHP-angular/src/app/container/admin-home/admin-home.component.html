@@ -4,19 +4,25 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th scope="col">id</th>
+                        <th scope="col">Sr No.</th>
                         <th scope="col">First Name</th>
                         <th scope="col">Email</th>
-                        <th scope="col">Website</th>
+                        <th scope="col">Comment</th>
+                        <th scope="col">Gender</th>
+                        <th scope="col">Date of Comment</th>
+                        <th scope="col">Date of Joining</th>
                     </tr>
                 </thead>
                 <tbody id="load-table-data">
                     <ng-container class="card" *ngFor="let user of users,let Sno = index">
                         <tr>
                             <th scope="row"> {{Sno + 1}} </th>
-                            <td>{{user.fname}}</td>
+                            <td>{{user.name}}</td>
                             <td>{{user.email}}</td>
-                            <td>{{user.website}}</td>
+                            <td>{{user.comment}}</td>
+                            <td>{{user.gender}}</td>
+                            <td>{{user.DOC}}</td>
+                            <td>{{user.DOJ}}</td>
                         </tr>
                     </ng-container>
 

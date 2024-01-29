@@ -56,6 +56,7 @@ export class LoginComponent {
           localStorage.setItem("admin", isAdmin);
 
           localStorage.setItem("Role", Role);
+          this.authService.isloggedinuser.next(true);
           this.router.navigate([''])
         },
         error: (err) => {

@@ -7,7 +7,7 @@ Header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Ac
 
 include("config.php");
 
-$sql = "SELECT * FROM emp_feedback";
+$sql = "SELECT * FROM emp_feedback ORDER BY DOC DESC";
 
 $result = mysqli_query($conn, $sql);
 

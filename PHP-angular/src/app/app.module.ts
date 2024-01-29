@@ -16,6 +16,7 @@ import { RegisteruserComponent } from './container/registeruser/registeruser.com
 import { ForgotpasswordComponent } from './container/forgotpassword/forgotpassword.component';
 import { ChangepasswordComponent } from './container/changepassword/changepassword.component';
 import { AdminHomeComponent } from './container/admin-home/admin-home.component'
+import { FeedbackComponent } from './container/feedback/feedback.component';
 
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -36,7 +37,7 @@ import { authService } from './services/auth.service';
 import { userService } from './services/user.service';
 import { forgot_password } from './services/forgot_password.service';
 import { ChangePassword } from "./services/change_password.service";
-import { FeedbackComponent } from './container/feedback/feedback.component';
+import { user_fetch_data } from './services/user_fetch_data.service';
 
 
 
@@ -84,6 +85,7 @@ import { FeedbackComponent } from './container/feedback/feedback.component';
     userService,
     forgot_password,
     ChangePassword,
+    user_fetch_data,
 
   ],
   bootstrap: [AppComponent]
