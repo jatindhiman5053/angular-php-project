@@ -10,13 +10,17 @@ import { LoginComponent } from './container/login/login.component';
 import { RegisteruserComponent } from './container/registeruser/registeruser.component';
 import { ForgotpasswordComponent } from './container/forgotpassword/forgotpassword.component';
 import { ChangepasswordComponent } from './container/changepassword/changepassword.component';
+import { AdminHomeComponent } from './container/admin-home/admin-home.component';
+import { FeedbackComponent } from './container/feedback/feedback.component';
 
 const routes: Routes = [
   { path: '', component: DefaultComponent },
   { path: "home", component: HomeComponent },
+  { path: "admin-Home", component: AdminHomeComponent },
   { path: "about", component: AboutComponent },
   { path: "blogs", component: BlogComponent },
   { path: "contact", component: ContactComponent },
+  { path: "feedback", component: FeedbackComponent },
   { path: "login", component: LoginComponent },
   { path: "login/register", component: RegisteruserComponent },
   { path: "login/forgot-password", component: ForgotpasswordComponent },

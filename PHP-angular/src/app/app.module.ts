@@ -15,6 +15,7 @@ import { LoginComponent } from './container/login/login.component';
 import { RegisteruserComponent } from './container/registeruser/registeruser.component';
 import { ForgotpasswordComponent } from './container/forgotpassword/forgotpassword.component';
 import { ChangepasswordComponent } from './container/changepassword/changepassword.component';
+import { AdminHomeComponent } from './container/admin-home/admin-home.component'
 
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -34,7 +35,8 @@ import { searchService } from './services/search.service';
 import { authService } from './services/auth.service';
 import { userService } from './services/user.service';
 import { forgot_password } from './services/forgot_password.service';
-import { ChangePassword } from "./services/change_password.service"
+import { ChangePassword } from "./services/change_password.service";
+import { FeedbackComponent } from './container/feedback/feedback.component';
 
 
 
@@ -54,6 +56,8 @@ import { ChangePassword } from "./services/change_password.service"
     RegisteruserComponent,
     ForgotpasswordComponent,
     ChangepasswordComponent,
+    AdminHomeComponent,
+    FeedbackComponent,
 
   ],
   imports: [

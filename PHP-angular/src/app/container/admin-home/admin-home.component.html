@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="all_cards">
+        <div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Website</th>
+                    </tr>
+                </thead>
+                <tbody id="load-table-data">
+                    <ng-container class="card" *ngFor="let user of users,let Sno = index">
+                        <tr>
+                            <th scope="row"> {{Sno + 1}} </th>
+                            <td>{{user.fname}}</td>
+                            <td>{{user.email}}</td>
+                            <td>{{user.website}}</td>
+                        </tr>
+                    </ng-container>
+
+                </tbody>
+            </table>
+
+
+        </div>
+    </div>
+</div>

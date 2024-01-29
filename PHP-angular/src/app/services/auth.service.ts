@@ -11,14 +11,17 @@ export class authService {
     constructor(private http: HttpClient) { }
 
     isloggedinuser = new BehaviorSubject<boolean>(false);
+    isisAdminuser = new BehaviorSubject<boolean>(false);
 
     admin_login(login: { username: string, password: string }) {
         return this.http.get(`http://localhost/angular-php-Project/PHP-angular/php/auth.php?username=${login.username}&password=${login.password}`)
     }
 
     isloggedIn(): boolean {
-        console.log(!!localStorage.getItem('Role'));
-
         return !!localStorage.getItem('Role');
+    }
+
+    isAdmin(): boolean {
+        return !!localStorage.getItem('admin');
     }
 }

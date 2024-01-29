@@ -33,9 +33,14 @@ export class LoginComponent {
         next: (res: any) => {
           var user = res;
           var Role = user[0].role;
+
+          var isAdmin = user[0].isAdmin;
+          localStorage.setItem("admin", isAdmin);
+          this.authService.isisAdminuser.next(true);
+
           localStorage.setItem("Role", Role);
           this.authService.isloggedinuser.next(true);
-          this.router.navigate(['home'])
+          this.router.navigate([''])
         },
         error: (err) => {
           console.log(err);
@@ -46,6 +51,10 @@ export class LoginComponent {
         next: (res: any) => {
           var user = res;
           var Role = user[0].role;
+
+          var isAdmin = user[0].isAdmin;
+          localStorage.setItem("admin", isAdmin);
+
           localStorage.setItem("Role", Role);
           this.router.navigate([''])
         },

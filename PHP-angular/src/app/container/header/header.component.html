@@ -4,11 +4,24 @@
     </div>
 
     <div class="menu">
-        <button routerLink="/home">HOME</button>
-        <button routerLink="/home">HOME</button>
+
+        <ng-container *ngIf="!isAdmin">
+            <button routerLink="/home">HOME</button>
+        </ng-container>
+        <ng-container *ngIf="isAdmin">
+            <button routerLink="/admin-Home">HOME</button>
+        </ng-container>
+
         <button routerLink="/about">ABOUT</button>
         <button routerLink="/blogs">BLOGS</button>
-        <button routerLink="/contact">CONTACT</button>
+
+        <ng-container *ngIf="!isAdmin">
+            <button routerLink="/contact">CONTACT</button>
+        </ng-container>
+
+        <ng-container *ngIf="isAdmin">
+            <button routerLink="/feedback">FEEDBACK</button>
+        </ng-container>
     </div>
 
     <div class="login-serarch">
@@ -17,7 +30,8 @@
             <button routerLink="/login" class="login-btn btn btn-primary">Login</button>
         </ng-container>
         <ng-container *ngIf="isloggedIn">
-            <button routerLink="/login" class="logout-btn btn btn-primary" (click)="logout()">Logout</button>
+            <button routerLink="/login" class="logout-btn btn btn-primary"
+                (click)="logout();adminlogout()">Logout</button>
         </ng-container>
     </div>
 </nav>
