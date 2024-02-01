@@ -10,6 +10,18 @@ p {
     margin: 0;
 }
 
+.usernameicon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.username {
+    display: flex;
+    gap: 5px;
+    color: white;
+}
+
 .logo>button {
     color: goldenrod;
 }

@@ -4,18 +4,24 @@
     </div>
 
     <div class="about-content">
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem, ipsa cupiditate voluptatum officiis quae
-            possimus saepe veniam harum ipsam unde officia iusto amet aperiam necessitatibus eum quas ab, quod
-            explicabo!</p>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem, ipsa cupiditate voluptatum officiis quae
-            possimus saepe veniam harum ipsam unde officia iusto amet aperiam necessitatibus eum quas ab, quod
-            explicabo!</p>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem, ipsa cupiditate voluptatum officiis quae
-            possimus saepe veniam harum ipsam unde officia iusto amet aperiam necessitatibus eum quas ab, quod
-            explicabo!</p>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem, ipsa cupiditate voluptatum officiis quae
-            possimus saepe veniam harum ipsam unde officia iusto amet aperiam necessitatibus eum quas ab, quod
-            explicabo!</p>
+        <div class="slideshow">
+            <div class="card">
+                <p-carousel [value]="comments" [numVisible]="3" [numScroll]="3" [circular]="false"
+                    [responsiveOptions]="responsiveOptions">
+                    <ng-template let-comment pTemplate="item">
+                        <div class="border-1 surface-border border-round m-2 text-center py-5 px-3">
+                            <div class="mb-3 usericon">
+                                <i class="fa-regular fa-user"></i>
+                            </div>
+                            <div>
+                                <h4 class="mb-1 username">{{ comment.fname }}</h4>
+                                <h6 class="mt-0 mb-3 usercomment">{{comment.comment }}</h6>
 
+                            </div>
+                        </div>
+                    </ng-template>
+                </p-carousel>
+            </div>
+        </div>
     </div>
 </div>

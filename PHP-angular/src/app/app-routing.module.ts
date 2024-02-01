@@ -14,7 +14,8 @@ import { AdminHomeComponent } from './container/admin-home/admin-home.component'
 import { FeedbackComponent } from './container/feedback/feedback.component';
 
 const routes: Routes = [
-  { path: '', component: DefaultComponent },
+  { path: '', component: LoginComponent },
+  { path: 'default', component: DefaultComponent },
   { path: "home", component: HomeComponent },
   { path: "admin-Home", component: AdminHomeComponent },
   { path: "about", component: AboutComponent },

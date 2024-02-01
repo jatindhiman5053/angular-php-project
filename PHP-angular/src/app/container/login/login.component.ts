@@ -33,14 +33,18 @@ export class LoginComponent {
         next: (res: any) => {
           var user = res;
           var Role = user[0].role;
-
           var isAdmin = user[0].isAdmin;
-          localStorage.setItem("admin", isAdmin);
-          this.authService.isisAdminuser.next(true);
+          var name = user[0].username;
 
           localStorage.setItem("Role", Role);
+          localStorage.setItem("admin", isAdmin);
+          localStorage.setItem("name", name);
+
+          this.authService.isisAdminuser.next(true);
           this.authService.isloggedinuser.next(true);
-          this.router.navigate([''])
+          this.authService.isusername.next('');
+
+          this.router.navigate(['default'])
         },
         error: (err) => {
           console.log(err);
@@ -51,13 +55,17 @@ export class LoginComponent {
         next: (res: any) => {
           var user = res;
           var Role = user[0].role;
-
           var isAdmin = user[0].isAdmin;
-          localStorage.setItem("admin", isAdmin);
+          var name = user[0].name;
 
           localStorage.setItem("Role", Role);
+          localStorage.setItem("admin", isAdmin);
+          localStorage.setItem("name", name);
+
+          this.authService.isusername.next('');
           this.authService.isloggedinuser.next(true);
-          this.router.navigate([''])
+
+          this.router.navigate(['default'])
         },
         error: (err) => {
           console.log(err);

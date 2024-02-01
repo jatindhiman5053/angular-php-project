@@ -3,21 +3,25 @@
         <h1>About Us</h1>
     </div>
 
-    <img class="about-img" src="./../../../assets/images/about-background.jpg" alt="">
-
-    <div class="about-content">
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem, ipsa cupiditate voluptatum officiis quae
-            possimus saepe veniam harum ipsam unde officia iusto amet aperiam necessitatibus eum quas ab, quod
-            explicabo!</p>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem, ipsa cupiditate voluptatum officiis quae
-            possimus saepe veniam harum ipsam unde officia iusto amet aperiam necessitatibus eum quas ab, quod
-            explicabo!</p>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem, ipsa cupiditate voluptatum officiis quae
-            possimus saepe veniam harum ipsam unde officia iusto amet aperiam necessitatibus eum quas ab, quod
-            explicabo!</p>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem, ipsa cupiditate voluptatum officiis quae
-            possimus saepe veniam harum ipsam unde officia iusto amet aperiam necessitatibus eum quas ab, quod
-            explicabo!</p>
-
+    <div class="card">
+        <p-treeTable [value]="files" [scrollable]="true" [tableStyle]="{'min-width':'50rem'}">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Name</th>
+                    <th>Size</th>
+                    <th>Type</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowNode let-rowData="rowData">
+                <tr [ttRow]="rowNode">
+                    <td>
+                        <p-treeTableToggler [rowNode]="rowNode"></p-treeTableToggler>
+                        {{ rowData.name }}
+                    </td>
+                    <td>{{ rowData.size }}</td>
+                    <td>{{ rowData.type }}</td>
+                </tr>
+            </ng-template>
+        </p-treeTable>
     </div>
 </div>

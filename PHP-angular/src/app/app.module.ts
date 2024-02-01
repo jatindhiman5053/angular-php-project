@@ -21,10 +21,11 @@ import { FeedbackComponent } from './container/feedback/feedback.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TreeTableModule } from 'primeng/treetable';
 import { DialogModule } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CarouselModule } from 'primeng/carousel';
 
 
 import { insertService } from './services/insert.service';
@@ -38,6 +39,7 @@ import { userService } from './services/user.service';
 import { forgot_password } from './services/forgot_password.service';
 import { ChangePassword } from "./services/change_password.service";
 import { user_fetch_data } from './services/user_fetch_data.service';
+import { NodeService } from './services/sample_data.service';
 
 
 
@@ -71,6 +73,7 @@ import { user_fetch_data } from './services/user_fetch_data.service';
     BrowserAnimationsModule,
     DialogModule,
     ButtonModule,
+    CarouselModule,
 
   ],
   providers: [
@@ -86,6 +89,7 @@ import { user_fetch_data } from './services/user_fetch_data.service';
     forgot_password,
     ChangePassword,
     user_fetch_data,
+    NodeService,
 
   ],
   bootstrap: [AppComponent]

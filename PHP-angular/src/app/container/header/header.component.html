@@ -1,6 +1,6 @@
-<nav>
+<nav *ngIf="isloggedIn">
     <div class="logo">
-        <button routerLink="/">MY-LOGO</button>
+        <button routerLink="/default">MY-LOGO</button>
     </div>
 
     <div class="menu">
@@ -26,12 +26,20 @@
 
     <div class="login-serarch">
         <input type="text" name="search" class="form-control" id="search-record" placeholder="Search">
+
+
+        <ng-container *ngIf="isloggedIn">
+            <div class="usernameicon">
+                <p  class="username"><i class="fa-regular fa-user"></i> {{username}}</p>
+            </div>
+        </ng-container>
+
         <ng-container *ngIf="!isloggedIn">
             <button routerLink="/login" class="login-btn btn btn-primary">Login</button>
         </ng-container>
+
         <ng-container *ngIf="isloggedIn">
-            <button routerLink="/login" class="logout-btn btn btn-primary"
-                (click)="logout();adminlogout()">Logout</button>
+            <button routerLink="/login" class="logout-btn btn btn-primary" (click)="logout()">Logout</button>
         </ng-container>
     </div>
 </nav>
