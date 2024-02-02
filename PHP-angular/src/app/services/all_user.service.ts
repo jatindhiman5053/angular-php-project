@@ -4,11 +4,11 @@ import { HttpClient } from "@angular/common/http";
 @Injectable({
     providedIn: "root"
 })
-export class all_fetchService {
-    url: any = 'http://localhost/angular-php-Project/PHP-angular/php/api_fetch_data.php';
+export class all_user {
+    url: any = 'http://localhost/angular-php-Project/PHP-angular/php/all_user.php';
     constructor(private http: HttpClient) { }
 
-    fetch_all() {
+    all_user() {
         return this.http.get(this.url);
     }
 }

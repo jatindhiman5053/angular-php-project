@@ -318,7 +318,6 @@ export class NodeService {
     }
 
     getFilesystem() {
-        console.log(this.getFileSystemNodesData());
         return Promise.resolve(this.getFileSystemNodesData());
     }
 }

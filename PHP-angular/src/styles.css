@@ -1,6 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+@import '@ng-select/ng-select/themes/default.theme.css';
 @import "primeng/resources/themes/lara-light-blue/theme.css";
 @import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+
 
 button {
     border: none;
@@ -20,20 +23,4 @@ body {
 body {
     margin: 0;
     padding: 0;
-
-    /*COLORS*/
-    --white: #F7F1E1;
-    --cream: #F6E6CB;
-    --dcream: #EACEA3;
-    --beige: #CDAD93;
-    --terracotta: #B9816D;
-    --dterracotta: #885444;
-    --peach: #E5AE8A;
-    --orange: #BF835A;
-    --green: #4B5243;
-    --dgreen: #2C3834;
-
-    /*FONTS*/
-    --mono: 'source-code-pro';
-    --display: 'lust-sans';
 }

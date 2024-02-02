@@ -1,39 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { all_fetchService } from '../../services/fetch_all.service';
-import { deleteService } from '../../services/delete.service';
-import { HttpClient } from '@angular/common/http';
-import { updateService } from '../../services/update.service';
-
+import { all_user } from '../../services/all_user.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
 
-  visible: boolean = false;
-
-  showDialog() {
-    this.visible = true;
-  }
+  constructor(private all_user: all_user) { }
 
   users: any;
 
-  constructor(private all_fetchService: all_fetchService, private deleteService: deleteService, private http: HttpClient, private updateService: updateService) { }
 
-  ngOnInit(): void {
-    this.all_fetchService.fetch_all().subscribe((data) => {
-      this.users = data;
+  ngOnInit() {
+    this.all_user.all_user().subscribe(res => {
+      this.users = res;
     })
   }
-
-  deleteRecord(uid: number) {
-    this.deleteService.delete_record(uid);
-  }
-
-  updateuser(edit: { id: number, editname: string, editemail: string, editwebsite: string, editgender: string, editcomment: string }) {
-    console.log(edit);
-  }
-
 }

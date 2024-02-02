@@ -1,27 +1,13 @@
 <div class="container">
-    <div class="all_cards">
-        <div class="minip">
+    <h1>Select the Value</h1>
+    <div class="select">
+        <ng-select [items]="users" bindLabel="name" bindValue="id" [multiple]="true" [closeOnSelect]="false"
+            placeholder="Select User" groupBy="gender" [selectableGroup]="true">
 
-            <div class="mg">
-                <div class="clr"></div>
-                <div class="group">
-                    <span>membergroup</span>
-                </div>
-            </div>
+            <ng-template ng-option-tmp let-item="item" let-item$="item$" let-index="index">
+                <input type="checkbox" [ngModel]="item$.selected" /> {{ item.name }}
+            </ng-template>
 
-            <div class="av" style="background-image: url('https://pbs.twimg.com/media/DjfSp1BVAAAiEyV.jpg');"></div>
-
-            <div class="info">
-                <h1>jinkyu do</h1>
-                <p>
-                    369 › he/him<br>
-                    soccer player
-                </p>
-            </div>
-            
-            <a class="plot" title="plot with jinkyu" href="/">
-                view plots →
-            </a>
-        </div>
+        </ng-select>
     </div>
 </div>

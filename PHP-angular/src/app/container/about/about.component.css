@@ -1,7 +1,7 @@
 .about {
     overflow: hidden;
     position: relative;
-    color: white;
+    text-align: center;
 }
 
 .about-img {

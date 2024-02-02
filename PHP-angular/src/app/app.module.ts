@@ -26,6 +26,7 @@ import { TreeTableModule } from 'primeng/treetable';
 import { DialogModule } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
 import { CarouselModule } from 'primeng/carousel';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 
 import { insertService } from './services/insert.service';
@@ -40,7 +41,7 @@ import { forgot_password } from './services/forgot_password.service';
 import { ChangePassword } from "./services/change_password.service";
 import { user_fetch_data } from './services/user_fetch_data.service';
 import { NodeService } from './services/sample_data.service';
-
+import { all_user } from './services/all_user.service';
 
 
 
@@ -74,6 +75,7 @@ import { NodeService } from './services/sample_data.service';
     DialogModule,
     ButtonModule,
     CarouselModule,
+    NgSelectModule,
 
   ],
   providers: [
@@ -90,6 +92,7 @@ import { NodeService } from './services/sample_data.service';
     ChangePassword,
     user_fetch_data,
     NodeService,
+    all_user,
 
   ],
   bootstrap: [AppComponent]
