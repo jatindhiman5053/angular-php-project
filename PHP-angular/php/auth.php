@@ -18,12 +18,6 @@ if ($username == "admin" && $password == "admin") {
     $sql = "SELECT * FROM employee WHERE name= '{$username}' AND passwords= '{$encptpass}'";
 }
 
-if ($username == "admin" && $password == "admin") {
-    $_SESSION["admin"] = $username;
-} else {
-    $_SESSION["user"] = $username;
-}
-
 $result = mysqli_query($conn, $sql);
 
 if (!$result) {
@@ -32,14 +26,17 @@ if (!$result) {
 }
 
 if (mysqli_num_rows($result) > 0) {
-    if ($username == "admin" && $password == "admin") {
+    $row = mysqli_fetch_assoc($result);
+    if ($row['username'] == "admin" && $row['password'] == "admin") {
+        $_SESSION['user'] = $row['username'];
+
         $output = mysqli_fetch_all($result, MYSQLI_ASSOC);
         echo json_encode($output);
-        // echo json_encode(array("msg" => "Record Found {$username}", "status" => true));
     } else {
+        $_SESSION['user'] = $row['username'];
+
         $output = mysqli_fetch_all($result, MYSQLI_ASSOC);
         echo json_encode($output);
-        // echo json_encode(array("msg" => "Record Found {$username}", "status" => true));
     }
 } else {
     echo json_encode(array("msg" => "No Record Found", "status" => false));

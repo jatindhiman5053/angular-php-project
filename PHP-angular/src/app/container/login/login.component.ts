@@ -1,5 +1,4 @@
 import { Component, Injectable } from '@angular/core';
-
 import { authService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 
@@ -16,6 +15,8 @@ export class LoginComponent {
 
   constructor(private authService: authService, private router: Router) {
   }
+
+
 
   visible: boolean = false;
 
