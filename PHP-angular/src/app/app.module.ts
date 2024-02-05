@@ -42,6 +42,7 @@ import { ChangePassword } from "./services/change_password.service";
 import { user_fetch_data } from './services/user_fetch_data.service';
 import { NodeService } from './services/sample_data.service';
 import { all_user } from './services/all_user.service';
+import { start_session } from './services/start_session.service';
 
 
 
@@ -93,6 +94,7 @@ import { all_user } from './services/all_user.service';
     user_fetch_data,
     NodeService,
     all_user,
+    start_session,
 
   ],
   bootstrap: [AppComponent]

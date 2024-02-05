@@ -1,5 +1,6 @@
 import { Component, Injectable } from '@angular/core';
 import { authService } from '../../services/auth.service';
+import { start_session } from '../../services/start_session.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -13,10 +14,8 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
 
-  constructor(private authService: authService, private router: Router) {
+  constructor(private authService: authService, private router: Router, private start_session: start_session) {
   }
-
-
 
   visible: boolean = false;
 
@@ -41,16 +40,27 @@ export class LoginComponent {
           localStorage.setItem("admin", isAdmin);
           localStorage.setItem("name", name);
 
-          this.authService.isisAdminuser.next(true);
+          this.authService.isisAdminuser.next(isAdmin);
           this.authService.isloggedinuser.next(true);
-          this.authService.isusername.next('');
+          this.authService.isusername.next(name);
 
-          this.router.navigate(['default'])
+          this.authService.checkSession().subscribe({
+            next: (sessionRes: any) => {
+              this.authService.isisAdminuser.next(sessionRes.isAdmin);
+              this.authService.isloggedinuser.next(true);
+              this.authService.isusername.next(sessionRes.username);
+
+              this.router.navigate(['default']);
+            },
+            error: (sessionErr) => {
+              console.log(sessionErr);
+            }
+          });
         },
         error: (err) => {
           console.log(err);
         }
-      })
+      });
     } else {
       this.authService.admin_login(login).subscribe({
         next: (res: any) => {
@@ -63,17 +73,30 @@ export class LoginComponent {
           localStorage.setItem("admin", isAdmin);
           localStorage.setItem("name", name);
 
-          this.authService.isusername.next('');
+          this.authService.isisAdminuser.next(isAdmin);
           this.authService.isloggedinuser.next(true);
+          this.authService.isusername.next(name);
 
-          this.router.navigate(['default'])
+          this.authService.checkSession().subscribe({
+            next: (sessionRes: any) => {
+              this.authService.isisAdminuser.next(sessionRes.isAdmin);
+              this.authService.isloggedinuser.next(true);
+              this.authService.isusername.next(sessionRes.username);
+
+              this.router.navigate(['default']);
+            },
+            error: (sessionErr) => {
+              console.log(sessionErr);
+            }
+          });
         },
         error: (err) => {
           console.log(err);
         }
-      })
+      });
     }
   }
+
 
   registersignup() {
     this.router.navigate(['login/register'])

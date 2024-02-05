@@ -26,13 +26,18 @@ if (!$result) {
 }
 
 if (mysqli_num_rows($result) > 0) {
-    if ($username == "admin" && $password == "admin") {
-        $output = mysqli_fetch_all($result, MYSQLI_ASSOC);
-        $_SESSION['user'] = $output;
+    $row = mysqli_fetch_assoc($result);
+    if ($row['username'] == "admin" && $row['password'] == "admin") {
+        $_SESSION['user'] = $row['username'];
+        $session_value = $_SESSION['user'];
+
+        $output = mysqli_fetch_all($session_value, MYSQLI_ASSOC);
         echo json_encode($output);
     } else {
-        $output = mysqli_fetch_all($result, MYSQLI_ASSOC);
-        $_SESSION['user'] = $output;
+        $_SESSION['user'] = $row['username'];
+        $session_value = $_SESSION['user'];
+
+        $output = mysqli_fetch_all($session_value, MYSQLI_ASSOC);
         echo json_encode($output);
     }
 } else {

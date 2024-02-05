@@ -17,6 +17,11 @@ export class authService {
     admin_login(login: { username: string, password: string }) {
         return this.http.get(`http://localhost/angular-php-Project/PHP-angular/php/auth.php?username=${login.username}&password=${login.password}`)
     }
+    
+    checkSession() {
+        return this.http.get('http://localhost/angular-php-Project/PHP-angular/php/check_session.php');
+    }
+
 
     isloggedIn(): boolean {
         return !!localStorage.getItem('Role');
